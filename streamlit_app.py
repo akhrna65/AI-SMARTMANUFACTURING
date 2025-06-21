@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import bz2
+import pickle
 from PIL import Image
 from datetime import datetime, timedelta
 from xgboost import XGBClassifier
@@ -42,13 +44,17 @@ def show_text(report_path):
     except:
         st.warning(f"⚠️ Report not found: {report_path}")
 
+def decompress_pickle(file):
+    with bz2.BZ2File(file, 'rb') as f:
+        return pickle.load(f)
+    
 # -------------------------------
 # 🟦 RANDOM FOREST MODEL
 # -------------------------------
 if menu == "🟦 Random Forest Model":
     
     st.subheader("🧪 Manual Prediction - Random Forest")
-    rf_model = joblib.load("rf.pbz2")
+    rf_model = decompress_pickle("rf.pbz2")
     label_encoder = joblib.load("label_encoder.pkl")
 
     with st.form("rf_form"):

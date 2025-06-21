@@ -9,4 +9,3 @@
    ```
    $ streamlit run streamlit_app.py
    ```
->>>>>>> ec32f15 (Update Streamlit app with latest changes)

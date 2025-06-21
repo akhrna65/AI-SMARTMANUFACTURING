@@ -1,3 +1,5 @@
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ai-predictive-maintenance-system.streamlit.app/)
+
 1. Install the requirements
 
    ```

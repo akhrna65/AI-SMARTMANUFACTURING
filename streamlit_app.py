@@ -48,7 +48,7 @@ def show_text(report_path):
 if menu == "🟦 Random Forest Model":
     
     st.subheader("🧪 Manual Prediction - Random Forest")
-    rf_model = joblib.load("rf_model.pkl")
+    rf_model = joblib.load("rf.pbz2")
     label_encoder = joblib.load("label_encoder.pkl")
 
     with st.form("rf_form"):
